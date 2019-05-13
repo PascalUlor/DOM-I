@@ -48,8 +48,17 @@ for (let i =0; i < nav.length; i++) {
   nav[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
   nav[i].style.color = 'green';
 }
-// let navStyle = document.querySelector('a')
-// navStyle.style.color = 'purple';
+
+let navBar = document.querySelector('nav')
+
+let firstItem = document.createElement('a');
+firstItem.textContent = 'Home';
+navBar.prepend(firstItem);
+firstItem.style.color = 'green';
+
+let lastItem = navBar.appendChild(document.createElement('a'));
+lastItem.textContent = 'Catalog';
+lastItem.style.color = 'green';
 
 /**
  * cta content area
