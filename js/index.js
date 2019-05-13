@@ -45,8 +45,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let nav = document.querySelectorAll('a')
 console.log(nav);
 for (let i =0; i < nav.length; i++) {
-  nav[i].textContent = siteContent["nav"][`nav-item-${i}`]
+  nav[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  nav[i].style.color = 'green';
 }
+// let navStyle = document.querySelector('a')
+// navStyle.style.color = 'purple';
 
 /**
  * cta content area
@@ -100,3 +103,10 @@ console.log(mainHeader);
   contactText[1].textContent = siteContent["contact"]["phone"];
   contactText[2].textContent = siteContent["contact"]["email"];
   
+
+  /**
+   * Footer style
+   */
+
+   let footerSection = document.querySelector('footer > p');
+   footerSection.textContent = siteContent.footer.copyright;
