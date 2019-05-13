@@ -134,3 +134,6 @@ contactText[0].appendChild(document.createTextNode(addressContent[5]));
 
    let footerSection = document.querySelector('footer > p');
    footerSection.textContent = siteContent.footer.copyright;
+   let footerBG = document.querySelector('footer');
+   footerBG.style.background = 'green';
+   footerBG.style.padding = "20px 0 20px 0";
