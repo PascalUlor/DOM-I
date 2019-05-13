@@ -84,3 +84,19 @@ console.log(mainHeader);
   mainText[3].textContent = siteContent["main-content"]["product-content"];
   mainHeader[4].textContent = siteContent["main-content"]["vision-h4"];
   mainText[4].textContent = siteContent["main-content"]["vision-content"];
+
+  /**
+   * Main content image
+   */
+  let mainImage = document.querySelector('#middle-img');
+  console.log(mainImage);
+  mainImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+  let contact = document.querySelectorAll('.contact > h4');
+  let contactText = document.querySelectorAll('.contact > p');
+  console.log(contact);
+  contact[0].textContent = siteContent["contact"]["contact-h4"];
+  contactText[0].textContent = siteContent["contact"]["address"];
+  contactText[1].textContent = siteContent["contact"]["phone"];
+  contactText[2].textContent = siteContent["contact"]["email"];
+  
