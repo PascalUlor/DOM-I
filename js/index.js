@@ -108,9 +108,24 @@ console.log(mainHeader);
   let contactText = document.querySelectorAll('.contact > p');
   console.log(contact);
   contact[0].textContent = siteContent["contact"]["contact-h4"];
-  contactText[0].textContent = siteContent["contact"]["address"];
+  // contactText[0].textContent = siteContent["contact"]["address"];
   contactText[1].textContent = siteContent["contact"]["phone"];
   contactText[2].textContent = siteContent["contact"]["email"];
+
+let addressText = siteContent.contact.address;
+let addressContent= addressText.split(' ');
+contactText[0].appendChild(document.createTextNode(addressContent[0]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[1]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[2]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[3]));
+contactText[0].appendChild(document.createElement('br'));
+contactText[0].appendChild(document.createElement('br'));
+contactText[0].appendChild(document.createTextNode(addressContent[4]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[5]));
   
 
   /**
