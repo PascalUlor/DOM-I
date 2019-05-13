@@ -47,3 +47,17 @@ console.log(nav);
 for (let i =0; i < nav.length; i++) {
   nav[i].textContent = siteContent["nav"][`nav-item-${i}`]
 }
+
+/**
+ * cta content area
+ */
+let ctaText = document.querySelector('h1');
+console.log(ctaText);
+ctaText.textContent = siteContent.cta.h1;
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent.cta.button;
+
+let ctaImage = document.querySelector('#cta-img');
+console.log(ctaImage);
+ctaImage.setAttribute('src', siteContent.cta["img-src"])
