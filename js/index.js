@@ -40,3 +40,103 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Nav bar
+let nav = document.querySelectorAll('a')
+console.log(nav);
+for (let i =0; i < nav.length; i++) {
+  nav[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  nav[i].style.color = 'green';
+}
+
+let navBar = document.querySelector('nav')
+
+let firstItem = document.createElement('a');
+firstItem.textContent = 'Home';
+navBar.prepend(firstItem);
+firstItem.style.color = 'green';
+
+let lastItem = navBar.appendChild(document.createElement('a'));
+lastItem.textContent = 'Catalog';
+lastItem.style.color = 'green';
+
+/**
+ * cta content area
+ */
+let ctaText = document.querySelector('h1');
+console.log(ctaText);
+// ctaText.textContent = siteContent.cta.h1;
+ctaContent = siteContent.cta.h1
+console.log(ctaContent.split(' '))
+let words= ctaContent.split(' ');
+ctaText.appendChild(document.createTextNode(words[0]));
+ctaText.appendChild(document.createElement('br'));
+ctaText.appendChild(document.createTextNode(words[1]));
+ctaText.appendChild(document.createElement('br'));
+ctaText.appendChild(document.createTextNode(words[2]));
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent.cta.button;
+ctaButton.addEventListener('click', (e) =>{
+  ctaButton.style.color = 'red';
+});
+
+let ctaImage = document.querySelector('#cta-img');
+console.log(ctaImage);
+ctaImage.setAttribute('src', siteContent.cta["img-src"]);
+
+// Main content
+let mainHeader = document.querySelectorAll('h4');
+let mainText = document.querySelectorAll('.text-content > p');
+console.log(mainHeader);
+  mainHeader[0].textContent = siteContent["main-content"]["features-h4"];
+  mainText[0].textContent = siteContent["main-content"]["features-content"];
+  mainHeader[1].textContent = siteContent["main-content"]["about-h4"];
+  mainText[1].textContent = siteContent["main-content"]["about-content"];
+  mainHeader[2].textContent = siteContent["main-content"]["services-h4"];
+  mainText[2].textContent = siteContent["main-content"]["services-content"];
+  mainHeader[3].textContent = siteContent["main-content"]["product-h4"];
+  mainText[3].textContent = siteContent["main-content"]["product-content"];
+  mainHeader[4].textContent = siteContent["main-content"]["vision-h4"];
+  mainText[4].textContent = siteContent["main-content"]["vision-content"];
+
+  /**
+   * Main content image
+   */
+  let mainImage = document.querySelector('#middle-img');
+  console.log(mainImage);
+  mainImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+  let contact = document.querySelectorAll('.contact > h4');
+  let contactText = document.querySelectorAll('.contact > p');
+  console.log(contact);
+  contact[0].textContent = siteContent["contact"]["contact-h4"];
+  // contactText[0].textContent = siteContent["contact"]["address"];
+  contactText[1].textContent = siteContent["contact"]["phone"];
+  contactText[2].textContent = siteContent["contact"]["email"];
+
+let addressText = siteContent.contact.address;
+let addressContent= addressText.split(' ');
+contactText[0].appendChild(document.createTextNode(addressContent[0]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[1]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[2]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[3]));
+contactText[0].appendChild(document.createElement('br'));
+contactText[0].appendChild(document.createElement('br'));
+contactText[0].appendChild(document.createTextNode(addressContent[4]));
+contactText[0].appendChild(document.createTextNode(' '));
+contactText[0].appendChild(document.createTextNode(addressContent[5]));
+  
+
+  /**
+   * Footer style
+   */
+
+   let footerSection = document.querySelector('footer > p');
+   footerSection.textContent = siteContent.footer.copyright;
+   let footerBG = document.querySelector('footer');
+   footerBG.style.background = 'green';
+   footerBG.style.padding = "20px 0 20px 0";
