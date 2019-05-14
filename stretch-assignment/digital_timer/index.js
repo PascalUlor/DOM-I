@@ -3,6 +3,7 @@ let ms = document.querySelector('#msTens');
 let msH = document.querySelector('#msHundreds');
 let secOnes = document.querySelector('#secondOnes');
 let secT = document.querySelector('#secondTens');
+let startBtn = document.querySelector('.start');
 let count = 0;
 let mili = 0;
  let miH = 0;
@@ -34,5 +35,10 @@ const timer = () => {
     secT.textContent = sT;
     count += 10;
 }
-
 let clock = setInterval(timer, 10);
+startBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    clock;
+    clearInterval(clock);
+});
+
