@@ -77,6 +77,9 @@ ctaText.appendChild(document.createTextNode(words[2]));
 
 let ctaButton = document.querySelector('button');
 ctaButton.textContent = siteContent.cta.button;
+ctaButton.addEventListener('click', (e) =>{
+  ctaButton.style.color = 'red';
+});
 
 let ctaImage = document.querySelector('#cta-img');
 console.log(ctaImage);
